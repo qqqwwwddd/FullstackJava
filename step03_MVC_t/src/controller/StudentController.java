@@ -20,9 +20,10 @@ public class StudentController {
 			EndView.printAll(StudentModel.getAll());
 
 		} else if (reqNumber == 2) {
-			EndView.printOne(StudentModel.getOne("JavaScript"));
+			EndView.printOne(StudentModel.getOne("Java"));
 
 		} else if (reqNumber == 3) {
+			// r= true/ false
 			boolean r = StudentModel.insert(new Student("Busan", 12));
 
 			if (r) {

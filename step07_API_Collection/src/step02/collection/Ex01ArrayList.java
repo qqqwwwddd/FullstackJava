@@ -10,7 +10,7 @@ public class Ex01ArrayList {
 
 	public static void main(String[] args) {
 		// ArrayList
-		ArrayList arr1 = new ArrayList();
+		ArrayList<Object> arr1 = new ArrayList<Object>();
 		// add : 데이터 추가 메소드
 		arr1.add("Java");
 		arr1.add(new Student("Java", 1, "Junior"));
@@ -46,33 +46,30 @@ public class Ex01ArrayList {
 
 		// for 출력?
 //      ArrayList vs LinkedList
-       List arrayList = new ArrayList();
-       List ldkList = new LinkedList();
-   
-       //
-       long startTime;
-       long endTime;
-   
-       startTime = System.currentTimeMillis();
-       for (int i = 0; i < 100000; i++) {
-          arrayList.add(0, i);
-   //       ldkList.add(i);
-       }
-       endTime = System.currentTimeMillis();
-   
-       System.out.println("ArrayList 데이터 삽입 시간은 " + (endTime - startTime));
-   
-       startTime = System.currentTimeMillis();
-       for (int i = 0; i < 100000; i++) {
-   //       arrayList.add(i);
-          ldkList.add(0, i);
-       }
-       endTime = System.currentTimeMillis();
-       System.out.println("LinkedList 데이터 삽입 시간은 " + (endTime - startTime));
-      
-   }
-		
+		List arrayList = new ArrayList();
+		List ldkList = new LinkedList();
+
+		//
+		long startTime;
+		long endTime;
+
+		startTime = System.currentTimeMillis();
+		for (int i = 0; i < 100000; i++) {
+			arrayList.add(0, i);
+			// ldkList.add(i);
+		}
+		endTime = System.currentTimeMillis();
+
+		System.out.println("ArrayList 데이터 삽입 시간은 " + (endTime - startTime));
+
+		startTime = System.currentTimeMillis();
+		for (int i = 0; i < 100000; i++) {
+			// arrayList.add(i);
+			ldkList.add(0, i);
+		}
+		endTime = System.currentTimeMillis();
+		System.out.println("LinkedList 데이터 삽입 시간은 " + (endTime - startTime));
 
 	}
 
-
+}

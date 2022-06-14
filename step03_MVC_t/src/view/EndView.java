@@ -12,7 +12,7 @@ public class EndView {
 		}
 	}
 
-	// 한명 출력
+	// 한명 출력' String student
 	public static void printOne(Student student) {
 		if (student != null) {
 			System.out.println(student);

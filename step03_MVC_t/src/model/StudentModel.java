@@ -22,7 +22,7 @@ public class StudentModel {
 	}
 
 	// 한 학생의 정보만 검색 : 이름이 존재하면 -> 리턴!!
-	public static Student getOne(String name) {
+	public static Student getOne(String name) { //
 		for (int i = 0; i < allData.length; i++) {
 //			if (allData[i] != null && allData[i].getName().equals(name)) {
 			if (allData[i] != null && name.equals(allData[i].getName())) {
@@ -37,6 +37,7 @@ public class StudentModel {
 	 * Student 객체가 배열에 저장 개발 - 고려사항 1 : 매개변수 값으로 name, age -> Student 객체 생성 -> 배열에
 	 * 저장 - 고려사항 2 : 매개변수 값으로 Student 객체 -> 배열에 저장
 	 */
+	// Student student = new Student("Busan",12);
 	public static boolean insert(Student student) {
 		if (index < 5) {
 			allData[index] = new Student(student.getName(), student.getAge());

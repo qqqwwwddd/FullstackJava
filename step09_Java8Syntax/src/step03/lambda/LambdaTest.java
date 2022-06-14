@@ -22,7 +22,11 @@ public class LambdaTest {
 		int operation(int v1, int v2);
 	}
 
-	static int operation(int v1, int v2, Calculation calc) {
+//	static int operation(int v1, int v2, Calculation calc) {
+//		return calc.operation(v1, v2);
+//	}
+
+	private static int operation(int v1, int v2, Calculation calc) {
 		return calc.operation(v1, v2);
 	}
 
