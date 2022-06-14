@@ -47,17 +47,21 @@ public class BloodTransFusionProjectService {
 	// 프로젝트 수정 - 프로젝트 명으로 현혈자 혹은 수혈자 수정_
 	public void projectUpdate(String projectName, People people) throws NotExistException {
 		ArrayList<BloodTransfusionProject> allProjects = getAllProjects();
+		int check = 0;
 		for (int i = 0; i < allProjects.size(); i++) {
 			if (projectName.equals(allProjects.get(i).getBtProjectName())) {
 				if (people instanceof Recipient) {
 					allProjects.get(i).setRecipient((Recipient) people);
+					check = 1;
 				} else if (people instanceof Donor) {
 					allProjects.get(i).setDonor((Donor) people);
+					check = 1;
 				}
-			} else {
-				throw new NotExistException("수정하고자 하는 Project가 존재하지 않습니다");
 			}
 
+		}
+		if (check == 0) {
+			throw new NotExistException("수정하고자 하는 Project가 존재하지 않습니다");
 		}
 	}
 
