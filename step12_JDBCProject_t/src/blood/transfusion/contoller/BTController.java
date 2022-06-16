@@ -54,8 +54,8 @@ public class BTController {
 	// 새로운 프로젝트 저장 로직
 	public void insertBTProject(BTProjectDTO btProject) {
 		try {
-			service.addDonor(new DonorDTO("donor4", "헌혈4", 25, "F", "AB-", "검사"));
-			service.addRecipient(new RecipientDTO("recipient4", "수혈4", 25, "M", "AB-", "질병"));
+//			service.addDonor(new DonorDTO("donor4", "헌혈4", 25, "F", "AB-", "검사"));
+//			service.addRecipient(new RecipientDTO("recipient4", "수혈4", 25, "M", "AB-", "질병"));
 			service.addBTProject(btProject);
 
 			RunningSuccessView.showSuccess("새로운 프로젝트 저장 성공");
@@ -64,6 +64,19 @@ public class BTController {
 			RunningEndView.showError("새로운 프로젝트 저장 실패");
 		}
 
+	}
+
+	// 새로운 프로젝트 저장 로직 2
+	public void insertBTProjects(DonorDTO dnproject, RecipientDTO rcproject, BTProjectDTO btProject) {
+		try {
+			service.addDonor(dnproject);
+			service.addRecipient(rcproject);
+			service.addBTProject(btProject);
+			RunningSuccessView.showSuccess("새로운 프로젝트 저장 성공");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			RunningEndView.showError("새로운 프로젝트 저장 에러");
+		}
 	}
 
 	// 특정 프로젝트 업데이트

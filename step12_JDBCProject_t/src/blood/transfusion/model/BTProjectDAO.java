@@ -128,8 +128,8 @@ public class BTProjectDAO {
 			pstmt.setString(1, btProjectName);
 			rset = pstmt.executeQuery();
 			if (rset.next()) {
-				blood_transfusionUser = new BTProjectDTO(rset.getString(2), rset.getString(3), rset.getString(4),
-						rset.getString(5), rset.getString(6));
+				blood_transfusionUser = new BTProjectDTO(rset.getString(1), rset.getString(2), rset.getString(3),
+						rset.getString(4), rset.getString(5));
 			}
 		} finally {
 			DBUtil.close(con, pstmt, rset);
