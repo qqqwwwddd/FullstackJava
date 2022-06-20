@@ -25,6 +25,7 @@ class Person1 {
 	void play() {
 		System.out.println("play");
 	}
+
 }
 
 interface Allowance {
@@ -32,6 +33,10 @@ interface Allowance {
 	abstract void in(int price, String name);
 
 	abstract void out(int price, String name);
+
+	default void test() {
+		System.out.println("interface - test");
+	}
 }
 
 interface Train {
@@ -57,6 +62,7 @@ class Student1 extends Person1 implements Allowance, Train {
 	public void payTuitionFee(int tuitionFee, String name) {
 		System.out.printf("[%s --> %d원 입금완료]%n", name, tuitionFee);
 	}
+
 }
 
 public class Test5 {
