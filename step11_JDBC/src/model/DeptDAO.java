@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import model.domain.Dept;
 import model.domain.DeptDTO;
 import util.DBUtil;
 
@@ -211,6 +212,9 @@ public class DeptDAO {
 			// 부서 생성
 			// boolean insertDept(Dept dept);
 //         System.out.println(insertDept(new DeptDTO(50, "PROGRAMMING", "BUSAN")));
+
+			// Builder pattern 으로 객체 생성하기
+			Dept detpBuilder = new Dept.Builder().deptno(50).dname("PROGRAMMING").loc("BUSAN").build();
 
 			// (부서 번호로) 검색한 해당 부서의 위치 수정
 			// updateDept(50, "SEOUL") : BUSAN -> SEOUL

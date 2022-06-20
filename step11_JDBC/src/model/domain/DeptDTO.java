@@ -8,6 +8,12 @@ public class DeptDTO {
 	public DeptDTO() {
 	}
 
+	public DeptDTO(int deptno, String dname) {
+		super();
+		this.deptno = deptno;
+		this.dname = dname;
+	}
+
 	public DeptDTO(int deptno, String dname, String loc) {
 		super();
 		this.deptno = deptno;
